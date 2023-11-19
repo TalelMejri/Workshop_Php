@@ -1,4 +1,11 @@
 <a href="./add.php" class="btn btn-primary mb-2">Add</a>
+
+<?php if(array_key_exists("message",$_GET)):?>
+  <div class="alert alert-<?=$_GET['type']?>">
+      <?php echo  $_GET['message'] ?>
+  </div>
+<?php  endif;?>
+
 <table class="table table-primary ">
        <thead>
            <tr>

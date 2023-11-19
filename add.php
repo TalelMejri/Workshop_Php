@@ -30,7 +30,7 @@
                     "comp"=>0,//ajouter par system
                     "dat"=>$due_date
                ]);
-               header("location:add.php?message=All Fields Are Required&type=danger");
+               header("location:index.php?message=Todo Added With Success&type=success");
           }
 
      }
