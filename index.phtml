@@ -1,0 +1,25 @@
+<a href="./add.php" class="btn btn-primary mb-2">Add</a>
+<table class="table table-primary ">
+       <thead>
+           <tr>
+              <th>id</th>
+              <th>title</th>
+              <th>desc</th>
+              <th>complete</th>
+              <th>date</th>
+           </tr>
+       </thead>
+       <tbody>
+        <?php 
+             foreach($todos as $todo):
+          ?>
+           <tr>
+             <td><?php echo $todo['id'] ?></td>
+             <td><?php echo $todo['title'] ?></td>
+             <td><?php echo $todo['description'] ?></td>
+             <td><?php echo $todo['complete'] ?></td>
+             <td><?php echo $todo['date'] ?></td>
+          </tr>
+        <?php endforeach; ?>
+       </tbody>
+   </table>

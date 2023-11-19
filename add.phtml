@@ -1,0 +1,37 @@
+
+<div class="row mt-4">
+    <div class="col">
+      <h1> Add todo </h1> 
+    </div>
+</div>
+
+<form action="./add.php" method="POST">
+
+    <?php if(array_key_exists("message",$_GET)): ?>
+         <div class="alert alert-<?=$_GET['type']?>">
+                <?php echo $_GET['message'] ?>
+         </div>
+    <?php endif; ?>
+
+  <div class="mb-3">
+    <label for="tit" class="form-label">titel</label>
+    <input type="text" name="titel" class="form-control  <?= array_key_exists('title',$errors) ? 'is-invalid' :''?>"  value="<?= $titel ?>" >
+    <small class="text-danger"><?php echo array_key_exists("title",$errors) ?   $errors['title'] : '' ?></small>
+  </div>
+
+  <div class="mb-3">
+    <label for="des" class="form-label">Description</label>
+    <input type="text" name="description" class="form-control  <?= array_key_exists('description',$errors) ? 'is-invalid' :''?>"   value="<?= $description ?>">
+    <small class="text-danger"><?php echo array_key_exists("description",$errors) ?   $errors['description'] : '' ?></small>
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" name="due_date" class="form-control  <?= array_key_exists('date',$errors) ? 'is-invalid' :''?>"  value="<?= $due_date ?>">
+    <small class="text-danger"><?php echo array_key_exists("date",$errors) ?   $errors['date'] : '' ?></small>
+  </div>
+
+  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  <button type="reset" class="btn btn-secondary">cancel</button>
+
+</form>
